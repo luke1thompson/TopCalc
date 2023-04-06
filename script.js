@@ -20,6 +20,9 @@ function operate(a, op, b) {
         case '/':
             output = a / b;
             break;
+        default:
+            output = 0;
+            break;
     }
     return output.toString();
 }
@@ -48,6 +51,7 @@ function update(e) {
     if (e.target.id == '.') {
         if (workingNum.indexOf('.') > -1) {
             return;
+            // prevents multiple decimal points
         }
         workingNum += '.';
     } else if (workingNum == '0') {
@@ -55,6 +59,7 @@ function update(e) {
     } else {
         workingNum += e.target.id;
     }
+
     post(workingNum);
 }
 
