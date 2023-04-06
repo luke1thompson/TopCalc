@@ -62,6 +62,8 @@ function setOperator(e) {
     if (!setNum) {
         setNum = workingNum;
         workingNum = '0';
+    } else if (operator == '=') {
+        //If the operator is '=', we only want to set operator to the new value
     } else {
         console.log(`setNum is ${setNum} and working is ${workingNum}`);
         setNum = operate(setNum, operator, workingNum);
@@ -88,8 +90,8 @@ function functions(e) {
             }
             post(workingNum);
             break;
-        case 'percent':
-            workingNum /= 100;
+        case 'back':
+            workingNum = workingNum.slice(0, workingNum.length - 1);
             post(workingNum);
             break;
     }
@@ -100,10 +102,10 @@ function equals() {
         return;
     }
 
-    workingNum = operate(setNum, operator, workingNum);
-    setNum = '';
+    setNum = operate(setNum, operator, workingNum);
+    workingNum = '';
     operator = '=';
-    post(workingNum);
+    post(setNum);
 }
 
 function clear() {
