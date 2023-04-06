@@ -1,0 +1,33 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+}
+
+.display {
+    border: 2px solid black;
+    height: 100px;
+    font-size: 50pt;
+    text-align: end;
+    padding: 10px;
+}
+
+.row {
+    display: flex;
+    height: 60px;
+}
+
+button {
+    min-width: 100px;
+}
+
+.wide {
+    min-width: 200px;
+}
